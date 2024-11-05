@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Box with Categories</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"> <!-- Import Poppins Font -->
+</head>
+<body>
+
+  <div id="message-box">
+    <h1>Message Box with Categories</h1>
+    <div id="composeContainer">
+      <button id="composeButton">
+        <img src="compose.svg" alt="Compose" id="composeIcon">
+        compose
+      </button>
+    </div>
+    <select id="filterCategoryInput">
+      <option value="all">Categories</option>
+      <option value="general">General</option>
+      <option value="tech">Tech</option>
+      <option value="design">Design</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+
+  <div id="popupOverlay" style="display:none;">
+    <div id="popupContent">
+      <h2>Compose Message</h2>
+      <input type="text" id="titleInput" placeholder="Enter message title" required />
+      <textarea id="messageInput" placeholder="Write your message here..." required></textarea>
+      <select id="categoryInput">
+        <option value="general">General</option>
+        <option value="tech">Tech</option>
+        <option value="design">Design</option>
+        <option value="other">Other</option>
+      </select>
+      <button id="submitButton">Submit</button>
+      <button id="closeButton">Close</button>
+    </div>
+  </div>
+
+  <div id="message-display">
+    <h2>Messages by Category</h2>
+    <div id="categoryMessages"></div>
+  </div>
+
+  <div id="messageDetailOverlay" style="display:none;">
+    <div id="messageDetailContent">
+      <span id="closeDetailButton" style="cursor:pointer;">&times;</span>
+      <h2>Message Details</h2>
+      <p id="messageDetailText"></p>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
